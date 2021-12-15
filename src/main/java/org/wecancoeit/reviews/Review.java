@@ -9,12 +9,12 @@ public class Review {
 
     @Id
     @GeneratedValue
-    long id;
-    String title;
-    String imageURL;
-    String reviewCategory;
-    String content;
-    String date;
+    private long id;
+    private String title;
+    private String imageURL;
+    private String reviewCategory;
+    private String content;
+    private String date;
 
     public Review(){}
 
