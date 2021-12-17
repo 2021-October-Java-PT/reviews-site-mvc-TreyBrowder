@@ -13,10 +13,10 @@ public class ReviewRepository {
 
     //constructor for database
     public ReviewRepository(){
-        Review callOfDuty = new Review(1l, "Call Of Duty","imageUrl", "reviewCategory", "content", "date");
-        Review haloInfinite = new Review(2l, "Halo Infinite","imageUrl", "reviewCategory", "content", "date");
-        Review apexLegends = new Review(3l, "Apex Legends","imageUrl", "reviewCategory", "content", "date");
-        Review fortnite = new Review(4l, "Fortnite","imageUrl", "reviewCategory", "content", "date");
+        Review callOfDuty = new Review(1l, "Call Of Duty","images/CodVanguard.jpg", "Video games", "This games is absolutely garbage they should just go ahead and let this game series die already!! It's the same stuff every year!", "10/05/21");
+        Review haloInfinite = new Review(2l, "Halo Infinite","image/HaloInfinite.jpg", "Video games", "Halo Inifinite is a great! I love it so much! It makes me feel like I'm playing the old school Halo games! 10 0ut of 10!", "12/12/21");
+        Review apexLegends = new Review(3l, "Apex Legends","image/ApexLegends.jpg", "Video games", "I'm addicted to this game! I might need AA LOL!", "05/15/21");
+        Review fortnite = new Review(4l, "Fortnite","images/fortnite.jpg", "Video Games", "The games is flat out for children, its terrible...nothing else needed to be said!", "02/24/21");
 
         reviewsList.put(callOfDuty.getId(), callOfDuty);
         reviewsList.put(haloInfinite.getId(), haloInfinite);
