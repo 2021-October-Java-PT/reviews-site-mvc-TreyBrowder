@@ -17,6 +17,11 @@ public class ReviewRepository {
         Review haloInfinite = new Review(2l, "Halo Infinite","imageUrl", "reviewCategory", "content", "date");
         Review apexLegends = new Review(3l, "Apex Legends","imageUrl", "reviewCategory", "content", "date");
         Review fortnite = new Review(4l, "Fortnite","imageUrl", "reviewCategory", "content", "date");
+
+        reviewsList.put(callOfDuty.getId(), callOfDuty);
+        reviewsList.put(haloInfinite.getId(), haloInfinite);
+        reviewsList.put(apexLegends.getId(), apexLegends);
+        reviewsList.put(fortnite.getId(), fortnite);
     }
 
     //uses varargs to add none or as many reviews as you want (for testing only)

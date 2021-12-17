@@ -10,12 +10,12 @@
 
     <main>
         <ul>
-            <li th:each="review: ${reviewsModel}"><a th:href="@{/reviews(id=${reviews.id})}" th:text="$reviews.title"></a></li>
+            <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></li>
         </ul>
     </main>
 
     <footer>
-        <small>&copy Trey 2021</small>
+        <small>&copy Trey Browder 2021</small>
     </footer>
 
 </body>
