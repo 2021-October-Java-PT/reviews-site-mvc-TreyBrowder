@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${reviewModel.title}">Review</title>
 </head>
 <body>
+    <header>
+        <h1 th:text="${reviewModel.title}">Review</h1>
+    </header>
+
+    <main>
+        <ul>
+            <p><a href="/reviews">Reviews</a></p>
+            <li th:text="${reviewModel.title}"></li>
+        </ul>
+        <h2 th:text="${reviewModel.content}"></h2>
+    </main>
+
+    <footer>
+        <small>&copy Trey Browder 2021</small>
+    </footer>
 
 </body>
 </html>
