@@ -31,21 +31,35 @@ public class ReviewControllerMVCTest {
     private Review reviewOne;
 
     @Mock
-    private Review reviewtwo;
+    private Review reviewTwo;
 
     @Test
-    public void shouldBeOkFallReviewInTheReviewsTemplate() throws Exception {
-        mockMvc.perform(get("/review")).andExpect(status().isOk())
+    public void shouldBeOkForAllReviewsInTheReviewsTemplate() throws Exception {
+        mockMvc.perform(get("/reviews")).andExpect(status().isOk())
                 .andExpect(view().name("reviewsTemplate"));
     }
 
     @Test
     public void shouldFindAllReviewsInModel() throws Exception {
-        Collection<Review> allReviewsInModel = Arrays.asList(reviewOne, reviewtwo);
+        Collection<Review> allReviewsInModel = Arrays.asList(reviewOne, reviewTwo);
         when(reviewRepo.findAllReviews()).thenReturn(allReviewsInModel);
 
         mockMvc.perform(get("/reviews"))
                 .andExpect(model().attribute("reviewsModel", allReviewsInModel));
+    }
+
+    @Test
+    public void shouldBeOkForOneReviewInTheReviewTemplate() throws Exception {
+        mockMvc.perform(get("/review?id=1")).andExpect(status().isOk())
+                .andExpect(view().name("reviewTemplate"));
+    }
+
+    @Test
+    public void shouldFindReviewOneInModel() throws Exception{
+        Long reviewOneId = 1L;
+        when(reviewRepo.findOneReview(reviewOneId)).thenReturn(reviewOne);
+        mockMvc.perform(get("/review?id=1"))
+                .andExpect(model().attribute("reviewModel", reviewOne));
     }
 
 }
